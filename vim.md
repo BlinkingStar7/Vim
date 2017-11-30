@@ -24,11 +24,10 @@
 * `:ZZ`	: Save and exit. Same with `:wq`
 * `:x`	: Save when it has been modified and exit
 
-```
-**Difference between `:wq` and `:x`**  
+> **Difference between `:wq` and `:x`**  
+
 `:wq` always saves file whereas `:x` saves file only when it has been modified
 Huge difference when you use *make* command (based on modification times)
-```
 
 * `e!`	: Reload original version of this file
 
@@ -72,17 +71,13 @@ Huge difference when you use *make* command (based on modification times)
 * ``*``	: search for the word in cursor
 * `#`	: search for the word in cursor opposite way
 
-```
-**Match start and end of word**
- 
+> **Match start and end of word**
+
  Use `\>` for word ends and `\<` for the begining. By default, ``*``and `#` will use these to search. If you want to allow part of words to match use ``g*`` instead
-```
 
-```
-**Highlight option**
+> **Highlight option**
+
 `:set hlsearch` to set general configuration. use `:nohlsearch` to erase highlight for only this time.
-```
-
 
 ## Search patterns
 * `/word$`	: end of the sentence
@@ -93,11 +88,9 @@ Huge difference when you use *make* command (based on modification times)
 * Unnamed mark
 	* `''`	: move to previous jump position
 	
-	```
-	**Jump command**
-	 Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
-	```
+	> **Jump command**
 
+	Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
 	* `CTRL-O`	: jump to Older position
 	* `CTRL-I`	: jump to Newer position (I is next to O)
 	* `Tab`	: same with `CTRL-I`
@@ -108,13 +101,11 @@ Huge difference when you use *make* command (based on modification times)
 	* `'{alpha}`	: go to mark
 	* `:marks`	:list of marks
 
-	```
-	**Special marks**
+	> **Special marks**
 	* `'`	: last jump position
 	* `"`	: last editiong file
 	* `[`	: start of the last change
 	* `]`	: end of the last change
-	```
 	
 
 
