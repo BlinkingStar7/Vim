@@ -1,6 +1,15 @@
-# [Markdown](https://daringfireball.net/projects/markdown/syntax)
+# [Markdown] (https://github.github.com/gfm/)
 
 ## Paragraphs
+* Every consecutive tabs and spaces are treated only once
+* Spaces in front of a sentence means nothing unless...
+	* You put 4 spaces or a tab in the start of line,
+	it will make codeblock
+		[EX] like this
+* If you want to move to next line, end sentence with two spaces  
+[EX] This sentence will go to next line
+	
+
 * Should start with characters (not spaces or tabs)
 * Sepearted by blank lines
 * __When you want to put `<br />`__

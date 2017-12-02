@@ -88,9 +88,9 @@ Huge difference when you use *make* command (based on modification times)
 * Unnamed mark
 	* `''`	: move to previous jump position
 	
-	> **Jump command**
+	> **Jump command** 
+	  Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
 
-	Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
 	* `CTRL-O`	: jump to Older position
 	* `CTRL-I`	: jump to Newer position (I is next to O)
 	* `Tab`	: same with `CTRL-I`
@@ -102,7 +102,7 @@ Huge difference when you use *make* command (based on modification times)
 	* `:marks`	:list of marks
 
 	> **Special marks**
-	* `'`	: last jump position
+	> * `'`	: last jump position
 	* `"`	: last editiong file
 	* `[`	: start of the last change
 	* `]`	: end of the last change
