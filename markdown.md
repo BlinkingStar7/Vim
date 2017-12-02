@@ -1,13 +1,14 @@
 # [Markdown] (https://github.github.com/gfm/)
 
 ## Paragraphs
-* Every consecutive tabs and spaces are treated only once
 * Spaces in front of a sentence means nothing unless...
-	* You put 4 spaces or a tab in the start of line,
-	it will make codeblock
-		[EX] like this
+	* You put 4 spaces or a tab in the start of line, it will make codeblock
+		(EX) like this
+* Tabs in front of a sentence are treated as 4 spaces 
 * If you want to move to next line, end sentence with two spaces  
-[EX] This sentence will go to next line
+(EX) This sentence will go to next line
+
+* Blank lines are used to differentiate paragrahs
 	
 
 * Should start with characters (not spaces or tabs)
@@ -15,6 +16,66 @@
 * __When you want to put `<br />`__
 	* You should end your sentence with _two or more spaces_. Or,
 	* You need to seperate paragraphs with _one or more blank lines_.
+
+
+## Blocks and inlines
+* Documents are a sequence of Blocks
+	* paragraph, block quotation, list, heading ...
+	* Blocks often contain other blocks
+	* Some block(like headings and paragraphs) contain inline context
+		* text, links, code spans ...
+* Block indicator takes precedence over inline structure
+* Continaer blocks(who can possess other blocks) and leaf blocks
+
+### Leaf blocks
+* Thematic breaks
+	* line consisting of 0-3 spaces of indentation and three or more `-`, `_`, `*`
+	* Can put spaces between them `(EX) - - - - - `
+	* But no other characters in the line
+	* Do not need blank lines before or after
+	* Can interrupt paragraphs
+
+* ATX headings
+	* Series of # plus at least one space and contents for heading
+	* This is not a heading `#5 bolt` or `#hashtag`
+	* Do not need blank lines before or after
+	* Can interrupt paragraphs
+	* There is a setext headings which put an underline as a heading indicator
+
+* Indented code blocks
+	* Start with 4 or more spaces
+	* Can contain several blank lines inside
+	* And end with another block(which doesn't meet indentation rule)
+	* Contents are not interpreted as markdown
+	* __Can't interrupt a paragraph(need a preceding blank line)__
+	* But no need to put blank line after indented code blocks
+
+* Fenced code blocks
+	* Start with three \` or ~ characters followed by info string
+	* Can interrupt a paragraph
+
+* Paragraphs
+	* A Sequence of __non-balnk lines that cannot be interpreted as other blocks__
+	* Contents are striped 
+	* Every consecutive tabs and spaces are treated only once (HTML thing)
+
+* Blank lines
+	* Blank lines between blocks are ignored, except for determining whether a list is tight or loose
+
+### Continaer blocks
+* Block quotes
+	* Start with 0-3 spaces of indentation and > charater 
+	* Can omit > charater (if the content is continuous paragraph)
+	* If you want to put indendted code block inside, start with 5 spaces
+
+
+
+
+
+
+
+
+
 
 
 ## Block quotes
