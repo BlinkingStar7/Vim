@@ -25,8 +25,8 @@
 * `:x`	: Save when it has been modified and exit
 
 > **Difference between `:wq` and `:x`**  
-
-`:wq` always saves file whereas `:x` saves file only when it has been modified
+>
+> `:wq` always saves file whereas `:x` saves file only when it has been modified
 Huge difference when you use *make* command (based on modification times)
 
 * `e!`	: Reload original version of this file
@@ -49,12 +49,12 @@ Huge difference when you use *make* command (based on modification times)
 * `L`	: to the last of window (Last)
 
 ## Scrolling file
-* `CTRL-F`	: scroll Forward
-* `CTRL-U`	: scroll halfway Up
-* `CTRL-E`	: scroll up(Extra line)
-* `CTRL-Y`	: scorll down
-* `CTRL-D`	: scroll halfway Down
 * `CTRL-B`	: scroll Below
+* `CTRL-U`	: scroll halfway Up
+* `CTRL-Y`	: scorll up
+* `CTRL-E`	: scroll down(Extra line)
+* `CTRL-D`	: scroll halfway Down
+* `CTRL-F`	: scroll Forward
 * `zt`	: put cursor top
 * `zz`	: put cursor middle
 * `zb`	: put cursor bottom
@@ -68,16 +68,17 @@ Huge difference when you use *make* command (based on modification times)
 * `N`	: goto next match opposite way
 * set ignorecase	: option to ignore case
 * **Every boolean options has option or nooption**
-* ``*``	: search for the word in cursor
+* `*`	: search for the word in cursor
 * `#`	: search for the word in cursor opposite way
 
 > **Match start and end of word**
-
- Use `\>` for word ends and `\<` for the begining. By default, ``*``and `#` will use these to search. If you want to allow part of words to match use ``g*`` instead
+>
+> Use `\>` for word ends and `\<` for the begining. By default, ``*``and `#` will use these to search. If you want to allow part of words to match use ``g*`` instead
+> * `g*`	: search for the word in cursor(partial word allowed)
 
 > **Highlight option**
-
-`:set hlsearch` to set general configuration. use `:nohlsearch` to erase highlight for only this time.
+>
+> `:set hlsearch` to set general configuration. use `:nohlsearch` to erase highlight for only this time.
 
 ## Search patterns
 * `/word$`	: end of the sentence
@@ -86,15 +87,14 @@ Huge difference when you use *make* command (based on modification times)
 
 ## Marks
 * Unnamed mark
-	* `''`	: move to previous jump position
-	
 	> **Jump command** 
-	  Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
-
-	* `CTRL-O`	: jump to Older position
-	* `CTRL-I`	: jump to Newer position (I is next to O)
-	* `Tab`	: same with `CTRL-I`
-	* `:jumps`	: list of jump positions
+	>
+	>  Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
+	> * `''`	: move to previous jump position
+	> * `CTRL-O`	: jump to Older position
+	> * `CTRL-I`	: jump to Newer position (I is next to O)
+	> * `Tab`	: same with `CTRL-I`
+	> * `:jumps`	: list of jump positions
 
 * Named mark
 	* `m{alpha}`	: set mark alphabet
@@ -102,10 +102,11 @@ Huge difference when you use *make* command (based on modification times)
 	* `:marks`	:list of marks
 
 	> **Special marks**
+	>
 	> * `'`	: last jump position
-	* `"`	: last editiong file
-	* `[`	: start of the last change
-	* `]`	: end of the last change
+	> * `"`	: last editing file
+	> * `[`	: start of the last change
+	> * `]`	: end of the last change
 	
 
 
