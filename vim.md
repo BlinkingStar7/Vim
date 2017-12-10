@@ -166,3 +166,48 @@ Huge difference when you use *make* command (based on modification times)
 * `:map <F5> i{<Esc>ea}<Esc>`	: make "word" into "{word}", should literally type 4 characters for `<F5>`
 * map to `\op` can avoid mapping to exist command 
 
+
+------------------------------------------------------------
+
+## Chapter 7
+
+### List of files
+* `vim one.c two.c three.c`	: open several vim files
+* `next`	: move to next file(quit current file)
+* `wnext`	: save and move next
+* `2next`	: move tot 2 next file
+* `previous`	: move to previous file
+* `last`, `first`	: move to a last/first files
+* `args`	: see current location
+* `args *.txt`	: edit another list of files
+* `CTRL-^`	: move to alternate file
+
+### MARKS
+* `\`"`	: last cursor position
+* `\`.` : last change position
+* lower case marks are local to file
+* upper case marks are global (can be used from any file)
+	> Tip.
+	> * H for header file, M in makefile, C in code file
+* `marks {mark}`	: show marked position
+* `CTRL-O`, `CTRL-I`	: older and nwer positions
+
+### Registers
+* `"{a-z}yw`	: yank to register
+* `wdaw`	: delete to register
+* `:write >> logfile`	: append current file to logfile
+
+### Viweing a file
+* `vim -R file`	: readonly mode
+* `view file`	: readonly mode
+* `vim -M file`	: unmodifiable mode
+
+### Opening a file
+* `w newfile`	: write current file to newfile
+* `sav(eas) newfile`	: write current file to newfile and open
+
+------------------------------------------------------------
+
+## Chapter 8
+
+###
