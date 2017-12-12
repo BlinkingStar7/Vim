@@ -100,7 +100,9 @@ Huge difference when you use *make* command (based on modification times)
 * Named mark
 	* `m{alpha}`	: set mark alphabet
 	* `'{alpha}`	: go to mark
-	* `:marks`	:list of marks
+	* `` `{alpha} ``	: go to mark (line and col)
+	* `:marks`	: list of marks
+	* `:delmarks {alpha}`	: delete marks
 
 
 	> **Special marks**
@@ -154,11 +156,11 @@ Huge difference when you use *make* command (based on modification times)
 * `set autoindent`	: Newly created line has same indent of the previous line
 * `set hlsearch`	: highlight matches
 * `set showcmd`	: Show incomplete command in the lower right corner
-*     autocmd BufReadPost *
+* restore cursor
+      autocmd BufReadPost *
 	    \ if line("'\"") > 1 && line("'\"") <= line("$") |
 	    \   exe "normal! g`\"" |
 	    \ endif
-  : restore cursor
 * `set ruler`	: show cursor position and %
 * `set optionname&`	: set option to default value
 
@@ -183,12 +185,13 @@ Huge difference when you use *make* command (based on modification times)
 * `CTRL-^`	: move to alternate file
 
 ### MARKS
-* `\`"`	: last cursor position
-* `\`.` : last change position
+* `'"`	: last cursor position (where exited)
+* `'.`	: last change position
 * lower case marks are local to file
 * upper case marks are global (can be used from any file)
-	> Tip.
-	> * H for header file, M in makefile, C in code file
+	> __Tip__
+	>
+	> H for header file, M in makefile, C in code file
 * `marks {mark}`	: show marked position
 * `CTRL-O`, `CTRL-I`	: older and nwer positions
 
@@ -197,7 +200,7 @@ Huge difference when you use *make* command (based on modification times)
 * `wdaw`	: delete to register
 * `:write >> logfile`	: append current file to logfile
 
-### Viweing a file
+### Viewing a file
 * `vim -R file`	: readonly mode
 * `view file`	: readonly mode
 * `vim -M file`	: unmodifiable mode
@@ -210,4 +213,25 @@ Huge difference when you use *make* command (based on modification times)
 
 ## Chapter 8
 
-###
+### Spliting new windows
+* `split`	: make a horizontal new window of current buffer above
+* `only`	: closes all windows, except for the current one
+* `CTRL-W CTRL-W`	: move cursor from one window to the other
+* `split {file}`	: open file above
+* `{num}split {file}`	: split window with num line size`
+* `vsplit`	: make a vertical new window
+* Putting `vertical` command will create everyting vertical
+
+### Window manipulation
+* `CTRL-W +`	: increase one line
+* `CTRL-W -`	: decrease one line
+* `CTRL-W =`	: set same height
+* `CTRL-W t`	: goto top window
+* `CTRL-W b`	: goto bottom window
+* `{height}CTRL-W _ `	: set height
+* `CTRL-W {HJKL}`	: move window that direction
+
+
+### Vertical new windows
+
+
