@@ -21,7 +21,7 @@
 * `U`	: undo things in line(if two times, Undo Undo)
 
 ### `:wq` family
-* `:ZZ`	: Save and exit. Same with `:wq`
+* `ZZ`	: Save and exit. Same with `:wq`
 * `:x`	: Save when it has been modified and exit
 
 > **Difference between `:wq` and `:x`**  
@@ -35,8 +35,8 @@ Huge difference when you use *make* command (based on modification times)
 
 ## Chapter 3
 * `{number} $`	: move to the end of below lines (1$ same, 2$ next line ...)
-* `;`	: Repeat search
-* `,`	: Repeat search in opposite direction
+* `;`	: Repeat search (in sentence)
+* `,`	: Repeat search in opposite direction (in sentence)
 * `%`	: Finds first parenthesis and go to it's pair
 
 ### Moving in file
@@ -92,6 +92,7 @@ Huge difference when you use *make* command (based on modification times)
 	> Includes search(`/` or `n`) and line jumps(`G`) but not `j`, `k`
 
 	* `''`	: move to previous jump position
+	* ` `` ` : move to previous jump position (including col)
 	* `CTRL-O`	: jump to Older position
 	* `CTRL-I`	: jump to Newer position (I is next to O)
 	* `Tab`	: same with `CTRL-I`
@@ -197,7 +198,7 @@ Huge difference when you use *make* command (based on modification times)
 
 ### Registers
 * `"{a-z}yw`	: yank to register
-* `wdaw`	: delete to register
+* `"wdaw`	: delete to register
 * `:write >> logfile`	: append current file to logfile
 
 ### Viewing a file
@@ -231,7 +232,70 @@ Huge difference when you use *make* command (based on modification times)
 * `{height}CTRL-W _ `	: set height
 * `CTRL-W {HJKL}`	: move window that direction
 
+### Tab
+* `:tabedit {filename}`	: open a new tab
+* `gt`	: goto next tabpage
+* `gT`	: goto previous tabpage
 
-### Vertical new windows
+### Prepanding a prefix
+* `stag`	: split new window for tag
+* `CTRL-W CTRL-^`	: (normal mode) split alternative file 
+* `:tab {command}`	: do command in new tab
 
+------------------------------------------------------------
 
+## Chapter 10
+
+### Macros
+* `q{register}`	: start recording
+* `q`	: end recording
+* `@{register}`	: run macro
+* `@@`	: repeat last macro
+
+> __lowercase and uppercase registers__
+>
+> using uppercase registers means to append to lowercase register
+
+### Substitution
+* `[range]s/from/to/flag`	: substitute from to to
+
+> __ Command range __
+>
+> * `:1,5:s/this/that/g`	: from 1 to 5th line 
+> * `:.,$:s/this/that/g`	: from first line(.) to last line($) == (%)
+> * `:?^Chapter?,/^Chapter/s=grey=gray=g`	: from bef Chpater to last Chpater(current Chapter) 
+> * `/Chapter/-1`	: line above Chapter
+> * `:.+3,$-5`	: three lines below the cursor to five line before EOF
+> * `:.,.+4`	: for five lines
+> * `:'a,'b`	: from and end at mark
+> * `:'<.'>`	: visual range (marks remain until other visual range is selected)
+
+### Global
+* `:[range]g/{pattern}/{command}`	: find a pattern and execute a command there. (default range is whole file != substitute)
+* `g+//+s/foobar/barfoo/g`	: substitute foobar to barfoo in c++ style comment
+* `g!`	: execute a command where a pattern doesn't match
+
+### Visual mode 
+* Use `CTRL-V` to change multiple lines at once
+* `Imain<Esc>`	: insert at the start of each visual block (short line not changed)
+* `Amain<Esc>`	: insert at the same coloumn at the end of visual block (making a visual block with $ command will put right after the end of visual blocks instead) (short line not changed / changed)
+* `cmain<Esc>`	: change visual block into new string (C to change from left margin to end of each line)
+* `~`	: swap case
+* `U/u`	: make upper/lowercase 
+* `r`	: filling with charaters
+* `>/<`	: shift
+
+### Miscellaneous
+* `gj` or `gk`	: move one row up or down (in warpped senetence)
+* `gv`	: select last block
+* `!{motion}{program}`	: execute external program with motion as input
+* `!1,5sort`	: sort first 5 lines (replace)
+* `!!date`	: execute date on current line
+* `:read !{program}`	: read command output (insert)
+* `:0read !date -u`	: insert date at the beginning of file
+* `:write !wc`	: wordcount
+* `:read {filename}` or `:write {filename}` : read/write to file
+
+------------------------------------------------------------
+
+## Chapter 12
